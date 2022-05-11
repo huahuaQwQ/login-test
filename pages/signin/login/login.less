@@ -1,27 +1,88 @@
 .root {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
 
     .plm-img {
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
+        height: 100%;
+        // min-width: 1000px;
+        z-index: -10;
+        zoom: 1;
         // background-image: url('@/static/images/2.png');
-        background: red url('../../../static/images/2.png') no-repeat;
+        background: url('../../../static/images/2.png') no-repeat;
         background-size: cover;
-        height: 600px;
+        background-position: 10% 50%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        filter: blur(1px);
+        opacity: 0.75;
     }
 
-    .plm-logo {}
+    .plm-logoBox {
+        display: flex;
+        flex-direction: row;
+        // background-color: yellow;
+        width: 360px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+        border: 1px #fff solid;
+        border-radius: 10px;
+        box-shadow: 0px 0px 5px rgb(154, 154, 246);
+        background-color: #fff;
+
+        .plm-logo {
+
+            padding-right: 10px;
+
+        }
+
+        .plm-line {
+            height: 30px;
+            border-right: 2px #4180FF solid;
+        }
+
+        .plm-titleBox {
+            display: flex;
+            flex-direction: column;
+            padding-left: 20px;
+            color: #4180FF;
+            font-weight: 500;
+            font-size: 18px;
+
+            .plm-dxunt:hover {
+                color: blue;
+            }
+        }
+    }
 
     .plm-loginBox {
+
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         width: 360px;
-        height: 370px;
+        height: 360px;
         background-color: #fff;
         border: 1px rgb(255, 255, 255) solid;
         border-radius: 10px;
-        box-shadow: 1px 1px 20px rgb(154, 154, 246);
+        box-shadow: 0px 0px 5px rgb(154, 154, 246);
+
 
         .plm-usernameBox {
             display: flex;
@@ -30,6 +91,33 @@
             height: 50px;
             justify-content: center;
             margin: 40px auto 0 auto;
+        }
+
+        .plm-passwordBox {
+            display: flex;
+            flex-direction: column;
+            width: 270px;
+            height: 50px;
+            justify-content: center;
+            margin: 20px auto 0 auto;
+        }
+
+        .plm-buttonBox {
+            display: flex;
+            flex-direction: column;
+            width: 270px;
+            height: 50px;
+            justify-content: center;
+            margin: 20px auto 0 auto;
+        }
+
+        .plm-hintBox {
+            display: flex;
+            flex-direction: row;
+            width: 270px;
+            height: 50px;
+            justify-content: space-between;
+            margin: 20px auto 0 auto;
         }
     }
 }
