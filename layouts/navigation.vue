@@ -134,7 +134,7 @@ export default {
   methods: {
     //点击登录
     onClickLogin() {
-      this.$router.push({ name: "signin-login-login" });
+      this.$router.push({ name: "signin-login" });
     },
     //鼠标进入登录小框
     onMouseLogin() {},

@@ -3,8 +3,8 @@
 </template>
 
 <script>
-import login from "./signin/login/login.vue";
-import register from "./signin/register/register.vue";
+import login from "./signin/login/index.vue";
+import register from "./signin/register/index.vue";
 export default {
   name: "IndexPage",
   layout: "navigation",
