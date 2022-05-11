@@ -4,6 +4,7 @@
 <template>
   <div class="root">
     <div class="plm-img"></div>
+
     <div class="plm-logoBox">
       <div class="plm-logo">
         <img
@@ -26,7 +27,7 @@
           <Input
             class="plm-input"
             type="text"
-            placeholder="请输入邮箱账号"
+            placeholder="请输入普通账号或者邮箱账号"
           ></Input>
         </div>
       </div>
