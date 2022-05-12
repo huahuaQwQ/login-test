@@ -76,7 +76,7 @@
                 type="password"
                 placeholder="请输入验证码"
               ></Input>
-              <Button type="primary" @click="onGetCode">获取验证码</Button>
+              <Button type="primary" @click="onGetCode">{{ text }}</Button>
             </div>
           </div>
 
@@ -103,7 +103,11 @@
 export default {
   name: "",
   data() {
-    return {};
+    return {
+      disabled: false,
+      //获取验证码文本
+      text: "获取验证码",
+    };
   },
   methods: {
     //跳转注册页面
@@ -116,7 +120,24 @@ export default {
       this.$router.push({ name: "signin-forget" });
     },
     //获取验证码
-    onGetCode() {},
+    onGetCode() {
+      //发送请求
+      //计时60秒
+      if (this.disabled) return;
+      this.disabled = true;
+      let n = 10;
+      const run = setInterval(() => {
+        n = n - 1;
+        if (n < 0) {
+          clearInterval(run);
+        }
+        this.text = "剩余 " + n + "s";
+        if (this.text < "剩余 " + 0 + "s") {
+          this.disabled = false;
+          this.text = "重新获取";
+        }
+      }, 1000);
+    },
   },
   mounted() {},
   computed: {},

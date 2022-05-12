@@ -37,16 +37,24 @@ export default {
     modules: [
         // https://go.nuxtjs.dev/axios
         '@nuxtjs/axios',
+        '@nuxtjs/proxy',
     ],
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
     axios: {
         // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-        baseURL: 'http://linen-fxym4pw0.vaiwan.com',
-        proxy: true,
+        proxy: true, // 表示开启代理
+        prefix: '/api', // 表示给请求url加个前缀 /api
+        credentials: true, // 表示跨域请求时是否需要使用凭证
     },
     proxy: {
-        "/api": "http://linen-fxym4pw0.vaiwan.com"
+        "/api": {
+            target: "http://linen-fxym4pw0.vaiwan.com",
+            changeOrigin: true, // 表示是否跨域
+            pathRewrite: {
+                '^/api': '', // 把 /api 替换成‘’
+            }
+        }
     },
 
     // Build Configuration: https://go.nuxtjs.dev/config-build

@@ -60,7 +60,7 @@
 
       <div class="line" />
       <!-- 登录成功 -->
-      <Dropdown trigger="click" @on-click="onHeaderClick" v-if="loginSuccess">
+      <Dropdown trigger="click" @on-click="onClickSkip" v-if="loginSuccess">
         <div
           style="
             cursor: pointer;
@@ -75,7 +75,7 @@
         </div>
         <DropdownMenu slot="list">
           <DropdownItem name="basic">账号设置</DropdownItem>
-          <DropdownItem name="reset-pass">修改密码</DropdownItem>
+          <DropdownItem name="signin-revise">修改密码</DropdownItem>
           <DropdownItem divided style="color: red" name="logout"
             >退出登录</DropdownItem
           >
@@ -136,6 +136,11 @@ export default {
     onClickLogin() {
       this.$router.push({ name: "signin-login" });
     },
+    //登录点击修改密码跳转
+    onClickSkip(name) {
+      console.log(name);
+      this.$router.push({ name });
+    },
     //鼠标进入登录小框
     onMouseLogin() {},
     onHeaderClick: function (e) {
@@ -163,6 +168,7 @@ export default {
       }
       screenfull.toggle();
     },
+    //跳转封装函数
     onClickToRoute: function (route) {
       if (route === this.$route.name) return;
       this.$router.push({ name: route });

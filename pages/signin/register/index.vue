@@ -59,13 +59,13 @@
 <script>
 import { getEamilCode } from "../../../axios/request.js";
 export default {
-  // asyncData(context) {
-  //   return context.$axios
-  //     .get("http://127.0.0.1:4523/mock/967824/code")
-  //     .then((res) => {
-  //       console.log(res);
-  //     });
-  // },
+  asyncData(context) {
+    return context.$axios
+      .get({url:'/code'})
+      .then((res) => {
+        console.log(res);
+      });
+  },
   name: "",
   data() {
     return {
